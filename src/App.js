@@ -18,7 +18,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         {
           userState.user ?
             <>
@@ -28,7 +27,6 @@ function App() {
           :
           <Login />
         }
-      </header>
       <div className="main"></div>
 
     </div>
