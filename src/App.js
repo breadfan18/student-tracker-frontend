@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router-dom';
 import { auth } from './services/firebase';
 import Header from './components/Header';
 
+// this is a test
+
 function App() {
   const [userState, setUserState] = useState({});
 
