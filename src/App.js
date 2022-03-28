@@ -1,9 +1,9 @@
 import './App.css';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { auth } from './services/firebase';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 function App() {
   const [userState, setUserState] = useState({});
