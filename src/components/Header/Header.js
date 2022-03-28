@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { logout } from '../../services/firebase';
 
+// Components
+import Nav from '../Nav/Nav';
+
 const Header = props => (
     <header>
         {
@@ -9,6 +12,7 @@ const Header = props => (
             :
             null
         }    
+        <Nav />
     </header>
 )
 
