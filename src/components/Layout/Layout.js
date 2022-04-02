@@ -41,6 +41,7 @@ const Layout = props => {
                                     exact path='/hwhistory'
                                     render={() => <HWHistory
                                         user={props.user}
+                                        homework={props.homework}
                                     />}
                                 />
                                 <Route

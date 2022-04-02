@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/api/students';
+const BASE_URL = 'http://localhost:3001/api/students';
 
 function fetchAllStudents() {
     return fetch(`${BASE_URL}`).then(res => res.json())
