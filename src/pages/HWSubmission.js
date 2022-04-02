@@ -3,7 +3,11 @@ const HWSubmission = props => {
     return (
         <div>
             <h1>Submit a Homework</h1>
-            <form>
+            <form style={{
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center',
+            }}>
                 <label>
                     First Name:
                     <input type="text" name="firstName" />
