@@ -8,7 +8,7 @@ const Header = props => (
     <header>
         {
             props.user ? 
-                <Link to='/' onClick={logout} style={{color: 'white'}}>Log Out</Link>
+                <Link to='/' onClick={logout}>Log Out</Link>
             :
             null
         }    
