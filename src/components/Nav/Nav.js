@@ -6,10 +6,10 @@ const Nav = props => {
         <nav>
             <Link>Login</Link>
             <Link>Sign Out</Link>
-            <Link>Dashboard</Link>
-            <Link>Homeworks</Link>
-            <Link>Submit Homework</Link>
-            <Link>Calendar</Link>
+            <Link to='/dashboard'>Dashboard</Link>
+            <Link to='/hwhistory'>Homeworks</Link>
+            <Link to='/hwsubmission'>Submit Homework</Link>
+            <Link to='/calendar'>Calendar</Link>
         </nav>
     )
 }

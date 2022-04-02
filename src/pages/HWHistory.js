@@ -1,13 +1,12 @@
 // Components
-import Layout from '../components/Layout/Layout';
 import HWCard from '../components/HWCard/HWCard';
 
-const HWHistory = props => {
+const HWHistory = (props) => {
     return (
-        <Layout>
-            <h1>(Student Name's)Homework History</h1>
+        <>
+            <h1>{props.user.displayName}'s Homework History</h1>
             <HWCard />
-        </Layout>
+        </>
     )
 }
 

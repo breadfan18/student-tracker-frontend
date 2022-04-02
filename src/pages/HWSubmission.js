@@ -1,6 +1,8 @@
+// Components
 const HWSubmission = props => {
     return (
-        <h1>Homework Submission Page</h1>
+        <h1>Submit a Homework</h1>
+
     )
 }
 
