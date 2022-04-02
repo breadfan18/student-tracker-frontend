@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/api/homeworks';
+const BASE_URL = 'http://localhost:3001/api/homeworks';
 
 // Need to refactor this based on how we write our model
 function fetchHomework(studentId) {

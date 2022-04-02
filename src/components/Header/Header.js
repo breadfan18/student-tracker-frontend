@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 import { logout } from '../../services/firebase';
-
-// Components
 import Nav from '../Nav/Nav';
 
 const Header = props => (
     <header>
         {
-            props.user ? 
-                <Link to='/' onClick={logout}>Log Out</Link>
-            :
-            null
-        }    
-        <Nav />
+            props.user
+                ?
+                <>
+                    <Link to='/' onClick={logout}>Log Out</Link>
+                    <Nav />
+                </>
+                :
+                null
+        }
     </header>
 )
 
