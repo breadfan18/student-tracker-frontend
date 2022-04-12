@@ -1,15 +1,31 @@
 import './App.css';
-import Login from './components/Login/Login';
 import { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import { auth } from './services/firebase';
-import Header from './components/Header/Header';
+import { fetchAllStudents, fetchStudent } from './services/students-service';
+import { fetchHomework } from './services/homework-service';
+import Layout from './components/Layout/Layout';
 
 function App() {
   const [userState, setUserState] = useState({});
+  const [students, setStudents] = useState();
+  const [homework, setSHomework] = useState();
+
+
+  async function getAppData() {
+    // Get Students
+    const allStudents = await fetchAllStudents()
+    setStudents(allStudents)
+
+    // Get Homeworks for a student
+    const homework = await fetchHomework(allStudents[0]._id);
+    setSHomework(homework)
+  }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
+
+    // Get data needed for application to render
+    getAppData()
 
     return function () {
       unsubscribe();
@@ -18,17 +34,11 @@ function App() {
 
   return (
     <div className="App">
-        {
-          userState.user ?
-            <>
-              <Header user={userState.user}/> 
-              <h1>{userState.user.displayName}</h1>
-            </>
-          :
-          <Login />
-        }
-      <div className="main"></div>
-
+      <Layout 
+        user={userState.user}
+        students={students} 
+        homework={homework} 
+      />
     </div>
   );
 }

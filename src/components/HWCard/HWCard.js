@@ -1,9 +1,9 @@
-const HWCard = props => {
+const HWCard = ({ homework }) => {
     return (
         <article>
-            <h2>Homework Name</h2>
-            <p>Date Due</p>
-            <p>Date Submitted</p>
+            <h2>{homework.assignment}</h2>
+            <p>{homework.due_date}</p>
+            <p>{homework.completed ? 'Completed' : 'Not Completed'}</p>
             <a href="#">Repo Link</a>
         </article>
     )
