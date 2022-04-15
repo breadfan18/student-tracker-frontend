@@ -17,8 +17,8 @@ function App() {
     setStudents(allStudents)
 
     // Get Homeworks for a student
-    const homework = await fetchHomework(allStudents[0]._id);
-    setSHomework(homework)
+    // const homework = await fetchHomework(allStudents[0]._id);
+    // setSHomework(homework)
   }
 
   useEffect(() => {

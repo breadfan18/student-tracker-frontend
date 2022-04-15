@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Nav = props => {
     return (
         <nav>
-            <Link>Login</Link>
-            <Link>Sign Out</Link>
+            <Link to='/'>Login</Link>
+            <Link to='/'>Sign Out</Link>
             <Link to='/dashboard'>Dashboard</Link>
             <Link to='/hwhistory'>Homeworks</Link>
             <Link to='/hwsubmission'>Submit Homework</Link>

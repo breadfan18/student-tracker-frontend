@@ -51,7 +51,7 @@ const Layout = props => {
                             </Switch>
                         </>
                         :
-                        <Login />
+                        <Login students={props.students} />
                 }
             </main>
             <Footer />
