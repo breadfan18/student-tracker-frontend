@@ -8,8 +8,7 @@ import Layout from './components/Layout/Layout';
 function App() {
   const [userState, setUserState] = useState({});
   const [students, setStudents] = useState();
-  const [homework, setSHomework] = useState();
-
+  const [homework, setHomework] = useState();
 
   async function getAppData() {
     // Get Students
@@ -17,8 +16,8 @@ function App() {
     setStudents(allStudents)
 
     // Get Homeworks for a student
-    // const homework = await fetchHomework(allStudents[0]._id);
-    // setSHomework(homework)
+    const homework = await fetchHomework();
+    setHomework(homework)
   }
 
   useEffect(() => {

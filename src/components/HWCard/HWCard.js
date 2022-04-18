@@ -4,7 +4,7 @@ const HWCard = ({ homework }) => {
             <h2>{homework.assignment}</h2>
             <p>{homework.due_date}</p>
             <p>{homework.completed ? 'Completed' : 'Not Completed'}</p>
-            <a href="#">Repo Link</a>
+            <a href="/">Repo Link</a>
         </article>
     )
 }

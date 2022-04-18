@@ -4,7 +4,7 @@ const STUDENT_ACCESS_CODE = process.env.REACT_APP_STUDENT_ACCESS_CODE || 'abc';
 const INSTRUCTOR_ACCESS_CODE = process.env.REACT_APP_INSTRUCTOR_ACCESS_CODE || 'def';
 
 const Login = (props) => {
-    console.log(props,'are login props')
+    // console.log(props,'are login props')
     const [userCode, setUserCode] = useState('');
     
     const handleChange = (e) => {

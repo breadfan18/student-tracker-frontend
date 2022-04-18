@@ -24,13 +24,11 @@ const INSTRUCTOR_BASE_URL = 'http://localhost:3001/api/instructors/';
 
 // Set up auth functions
 function studentLogin(props) {
-    console.log(props, 'are student login props')
     auth.signInWithPopup(googleProvider).then(() => {
         const foundUser = props.students.find(student => student.uid === auth.currentUser.uid);
 
         if (foundUser !== undefined) {
-            console.log(foundUser, 'is the student ALREADY in the database')
-            // redirect  to student dashboard?
+            localStorage.setItem('student', JSON.stringify(foundUser));
         } else {
             fetch(STUDENT_BASE_URL, {
                 method: 'POST',
@@ -45,8 +43,7 @@ function studentLogin(props) {
                 })
             }).then(res => res.json())
                 .then(student => {
-                    console.log(student, 'is NEW student');
-                    // redirect to student dashboard
+                    localStorage.setItem('student', JSON.stringify(student));
                 })
         }
     })
@@ -84,6 +81,7 @@ function instructorLogin() {
 }
 
 function logout() {
+    localStorage.clear();
     return auth.signOut();
 }
 
