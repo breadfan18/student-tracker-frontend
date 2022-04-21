@@ -33,7 +33,10 @@ const Layout = props => {
                                 />
                                 <Route
                                     exact path='/dashboard'
-                                    render={() => <Dashboard />}
+                                    render={() => <Dashboard 
+                                        user={props.user}
+                                        homework={props.homework}
+                                    />}
                                 />
                                 <Route
                                     exact path='/hwdetails'

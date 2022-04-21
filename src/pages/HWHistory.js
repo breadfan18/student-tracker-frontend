@@ -2,7 +2,6 @@
 import HWCard from '../components/HWCard/HWCard';
 
 const HWHistory = props => {
-    console.log(props.homework);
     const hwCards = props.homework.map((hw, idx) => <HWCard homework={hw} key={idx}/>)
     return (
         <>
