@@ -36,6 +36,7 @@ const Layout = props => {
                                     render={() => <Dashboard 
                                         user={props.user}
                                         homework={props.homework}
+                                        student={props.student}
                                     />}
                                 />
                                 <Route

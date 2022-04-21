@@ -8,12 +8,16 @@ import Layout from './components/Layout/Layout';
 function App() {
   const [userState, setUserState] = useState({});
   const [students, setStudents] = useState();
+  const [loggedInStudent, setLoggedInStudent] = useState({});
   const [homework, setHomework] = useState();
 
   async function getAppData() {
     // Get Students
     const allStudents = await fetchAllStudents()
     setStudents(allStudents)
+
+    const authenticatedStudent = await fetchStudent(auth.currentUser.uid);
+    setLoggedInStudent(authenticatedStudent[0]);
 
     // Get Homeworks for a student
     const homework = await fetchHomework();
@@ -36,7 +40,8 @@ function App() {
       <Layout 
         user={userState.user}
         students={students} 
-        homework={homework} 
+        homework={homework}
+        student={loggedInStudent} 
       />
     </div>
   );
